@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning">
+  <meta name="description" content="A CARLA-SUMO co-simulation testbed with six roadway work-zone scenario families for training and evaluating a PPO-based motion planner with a structured spatial-temporal scene encoder.">
+  <meta name="keywords" content="autonomous driving, motion planning, work zones, reinforcement learning, PPO, CARLA, SUMO, co-simulation, scene encoder, safety-critical">
+  <meta name="author" content="Shuo Zhang, Yiang Xu, Ruide Yin">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WZ-Plan">
+  <meta property="og:title" content="WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning">
+  <meta property="og:description" content="A CARLA-SUMO co-simulation testbed with six roadway work-zone scenario families for training and evaluating a PPO-based motion planner with a structured spatial-temporal scene encoder.">
+  <meta property="og:url" content="https://shuo9898-zs.github.io/wz-plan/">
+  <meta property="og:image" content="https://shuo9898-zs.github.io/wz-plan/static/images/overview/S1_to_S6_3x2.png">
+  <meta property="og:image:alt" content="Six roadway work-zone scenarios for autonomous vehicle motion planning">
+  <meta property="article:author" content="Shuo Zhang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="autonomous driving">
+  <meta property="article:tag" content="reinforcement learning">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning">
+  <meta name="twitter:description" content="A CARLA-SUMO co-simulation testbed with six roadway work-zone scenario families for training and evaluating a PPO-based motion planner with a structured spatial-temporal scene encoder.">
+  <meta name="twitter:image" content="https://shuo9898-zs.github.io/wz-plan/static/images/overview/S1_to_S6_3x2.png">
+  <meta name="twitter:image:alt" content="Six roadway work-zone scenarios for autonomous vehicle motion planning">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning">
+  <meta name="citation_author" content="Zhang, Shuo">
+  <meta name="citation_author" content="Xu, Yiang">
+  <meta name="citation_author" content="Yin, Ruide">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured data for the public project page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": "WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning",
+    "description": "A CARLA-SUMO co-simulation testbed with six roadway work-zone scenario families for training and evaluating a PPO-based motion planner with a structured spatial-temporal scene encoder.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Shuo Zhang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "New York University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yiang Xu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "New York University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Ruide Yin",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "New York University"
+        }
+      }
+    ],
+    "url": "https://shuo9898-zs.github.io/wz-plan/",
+    "image": "https://shuo9898-zs.github.io/wz-plan/static/images/overview/S1_to_S6_3x2.png",
+    "keywords": ["autonomous driving", "motion planning", "work zones", "reinforcement learning", "PPO", "CARLA", "SUMO"],
+    "abstract": "Autonomous driving has made substantial progress under general driving conditions, but roadway work zones remain challenging for motion planning. Work zones temporarily change lane layouts and restrict available road space, complicating interactions with surrounding vehicles and pedestrians, while limited datasets dedicated to work-zone motion planning hinder planner training and evaluation. Simulation supports controlled training and evaluation in safety-critical scenarios, while reinforcement learning allows planners to learn from interactions with the environment. We introduce WZ-Plan, a configurable CARLA–SUMO testbed comprising a normal-traffic work zone and five safety-critical scenario families—curved work zones, constrained corridors, jaywalker encounters, dense traffic, and opposing-lane closures—and demonstrate its use with a jointly trained Proximal Policy Optimization (PPO) planner and structured scene encoder. Scenario-wise evaluation characterizes planner capabilities, failure modes, and within-town transfer limitations, illustrating WZ-Plan's value as a platform for systematic development and evaluation of work-zone motion planners.",
+    "isAccessibleForFree": true,
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Autonomous Driving"
+      },
+      {
+        "@type": "Thing",
+        "name": "Reinforcement Learning"
+      }
+    ]
+  }
+  </script>
+  
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">WZ-Plan: A Roadway Work-Zone Testbed for Autonomous Vehicle Motion Planning via Reinforcement Learning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0SdVj4MAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">Shuo Zhang</a><sup>*</sup>,</span>
+              <span class="author-block">
+                Yiang Xu<sup>*</sup>,</span>
+              <span class="author-block">
+                Ruide Yin<sup>*</sup></span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">New York University</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                  <span class="link-block">
+                    <a href="static/pdfs/paper.pdf" target="_blank" rel="noopener noreferrer"
+                       class="external-link button is-normal is-rounded is-dark" aria-label="Open temporary paper PDF">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/shuo9898-zs/wz-plan" target="_blank" rel="noopener noreferrer"
+                    class="external-link button is-normal is-rounded is-dark" aria-label="View WZ-Plan source code on GitHub">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+            </div>
+            <p class="is-size-7">Paper PDF is a temporary placeholder; the manuscript will be added later. Simulator: CARLA 0.9.15 prebuilt WindowsNoEditor executable (not included).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Scenario illustrations -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Scenario Illustrations</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <figure class="image">
+            <img src="static/images/scenarios/wz_plan_scenarios.png" alt="Six roadway work-zone scenarios: normal work zone, curved road, urban corridor, jaywalker, high traffic density, and oncoming traffic" loading="lazy"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End scenario illustrations -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Autonomous driving has made substantial progress under general driving
+            conditions, but roadway work zones remain challenging for motion planning.
+            Work zones temporarily change lane layouts and restrict available road
+            space, complicating interactions with surrounding vehicles and pedestrians,
+            while limited datasets dedicated to work-zone motion planning hinder
+            planner training and evaluation. Simulation supports controlled training
+            and evaluation in safety-critical scenarios, while reinforcement learning
+            allows planners to learn from interactions with the environment. We
+            introduce WZ-Plan, a configurable CARLA–SUMO testbed comprising a
+            normal-traffic work zone and five safety-critical scenario families—curved
+            work zones, constrained corridors, jaywalker encounters, dense traffic,
+            and opposing-lane closures—and demonstrate its use with a jointly trained
+            Proximal Policy Optimization (PPO) planner and structured scene encoder.
+            Scenario-wise evaluation characterizes planner capabilities, failure modes,
+            and within-town transfer limitations, illustrating WZ-Plan's value as a
+            platform for systematic development and evaluation of work-zone motion planners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Scenario overview -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Six Work-Zone Scenario Families</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/overview/S1_to_S6_3x2.png" alt="Overview of the six roadway work-zone scenarios" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Fig. 1. Overview of the six roadway work-zone scenarios: (a) S1 normal work zone, (b) S2 work zone on a curved road, (c) S3 urban corridor work zone, (d) S4 work zone with a jaywalker, (e) S5 work zone with high traffic density, and (f) S6 lane closure with oncoming traffic.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End scenario overview -->
+
+<!-- Framework figure -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Method Overview</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <a href="static/pdfs/method_overview.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Method Overview PDF">
+            <img class="method-overview-image" src="static/images/framework/method_overview_from_pdf.png" alt="Overview of the proposed motion-planning and training framework" loading="lazy"/>
+          </a>
+          <p><a href="static/pdfs/method_overview.pdf" target="_blank" rel="noopener noreferrer">Open Method Overview PDF</a></p>
+          <h2 class="subtitle has-text-centered">
+            Fig. 2. Overview of the proposed motion-planning and training framework. (a) Structured observation modalities are encoded into a compact scene representation. (b) The PPO policy generates target-speed and target-yaw-rate commands, executed by dual PID controllers in the CARLA–SUMO closed loop. (c) Three simulation workers collect parallel rollouts using a frozen policy, merged before each synchronized PPO update.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End framework figure -->
+
+
+<!-- Training curves -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Training Dynamics</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/results/training_reward_5seeds_mean_sd.png" alt="Joint S1-S6 training across five seeds" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Fig. 3. Joint S1–S6 training across five seeds. Lines and shaded bands show the mean and ±1 sample standard deviation after per-seed 20-episode smoothing and interpolation onto a common step grid.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End training curves -->
+
+
+<!-- Demo videos -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Policy Demos</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="static/images/scenarios/S1_WZ1_layoutB_training.png" id="video1" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s1_overview.mp4?v=20260911-s1-overview-v2" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S1: Overview — normal work zone</h2>
+        </div>
+        <div class="item item-video2">
+          <video poster="static/images/scenarios/S1_WZ1_layoutB_training.png" id="video2" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s1_chase.mp4?v=20260911-s1-overview-v2" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S1: Chase view — normal work zone</h2>
+        </div>
+        <div class="item item-video3">
+          <video poster="static/images/scenarios/S3_WZ1_layoutB_training.png" id="video3" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s3_overview.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S3: Overview — safe corridor</h2>
+        </div>
+        <div class="item item-video4">
+          <video poster="static/images/scenarios/S3_WZ1_layoutB_training.png" id="video4" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s3_chase.mp4?v=20260911-pitch1-success" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S3: Chase view — safe corridor</h2>
+        </div>
+        <div class="item item-video5">
+          <video poster="static/images/scenarios/S4_WZ1_layoutB_training.png" id="video5" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s4_overview.mp4?v=20260911-s4-overview-success" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S4: Overview — jaywalker</h2>
+        </div>
+        <div class="item item-video6">
+          <video poster="static/images/scenarios/S4_WZ1_layoutB_training.png" id="video6" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s4_chase.mp4?v=20260911-pitch1-success" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S4: Chase view — jaywalker</h2>
+        </div>
+        <div class="item item-video7">
+          <video poster="static/images/scenarios/S5_WZ1_layoutB_training.png" id="video7" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s5_overview.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S5: Overview — high traffic</h2>
+        </div>
+        <div class="item item-video8">
+          <video poster="static/images/scenarios/S5_WZ1_layoutB_training.png" id="video8" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/demos/test_s5_chase.mp4?v=20260911-pitch1-success" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">S5: Chase view — high traffic</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End demo videos -->
+
+<!-- Results tables -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Results</h2>
+
+      <h3 class="title is-5">Table II. Targeted S2/S6 success rates (%)</h3>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Variant</th>
+              <th>Seed / Policy</th>
+              <th>Val</th>
+              <th>Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>S2</td><td>Joint / Fixed-OD</td><td>7 / P23</td><td>50.00</td><td>1.33</td></tr>
+            <tr><td>S2</td><td>Joint / Road-Arc</td><td>7 / P33</td><td>90.00</td><td>0.00</td></tr>
+            <tr><td>S6</td><td>S6-only</td><td>7 / P32</td><td>100.00</td><td>0.00</td></tr>
+            <tr><td>S6</td><td>S6-only</td><td>27 / P30</td><td>53.33</td><td>33.33</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="title is-5">Table III. S1345 outcomes of two joint policies (%)</h3>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Val</th>
+              <th>Test</th>
+              <th>Collision</th>
+              <th>Off-road</th>
+              <th>WZ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" class="has-text-weight-bold">Seed27 / P32</td></tr>
+            <tr><td>S1</td><td>100.00</td><td>96.67</td><td>3.33</td><td>0.00</td><td>0.00</td></tr>
+            <tr><td>S3</td><td>40.00</td><td>16.67</td><td>12.67</td><td>0.00</td><td>70.67</td></tr>
+            <tr><td>S4</td><td>66.67</td><td>38.67</td><td>0.00</td><td>61.33</td><td>0.00</td></tr>
+            <tr><td>S5</td><td>83.33</td><td>93.33</td><td>0.00</td><td>6.67</td><td>0.00</td></tr>
+            <tr><td class="has-text-weight-bold">Macro</td><td>72.50</td><td>61.33</td><td>4.00</td><td>17.00</td><td>17.67</td></tr>
+            <tr><td colspan="6" class="has-text-weight-bold">Seed17 / P27</td></tr>
+            <tr><td>S1</td><td>96.67</td><td>100.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+            <tr><td>S3</td><td>93.33</td><td>56.67</td><td>6.00</td><td>0.00</td><td>37.33</td></tr>
+            <tr><td>S4</td><td>30.00</td><td>14.00</td><td>0.00</td><td>85.33</td><td>0.67</td></tr>
+            <tr><td>S5</td><td>16.67</td><td>69.33</td><td>0.00</td><td>0.67</td><td>30.00</td></tr>
+            <tr><td class="has-text-weight-bold">Macro</td><td>59.17</td><td>60.00</td><td>1.50</td><td>21.50</td><td>17.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="title is-5">Table IV. Success across five joint-training seeds (%)</h3>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Val</th>
+              <th>Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>S1</td><td>84.00 ± 16.40</td><td>66.13 ± 39.20</td></tr>
+            <tr><td>S3</td><td>68.00 ± 22.92</td><td>38.67 ± 28.35</td></tr>
+            <tr><td>S4</td><td>64.67 ± 24.79</td><td>51.60 ± 42.13</td></tr>
+            <tr><td>S5</td><td>41.33 ± 31.68</td><td>52.53 ± 28.77</td></tr>
+            <tr><td class="has-text-weight-bold">Macro</td><td>64.50 ± 8.39</td><td>52.23 ± 9.17</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="has-text-centered is-size-7 has-text-grey">
+        Validation uses 30 episodes per scenario; test uses 150 completed episodes per scenario (50 per origin). Collision, Off-road, and WZ are test failure rates over all completed test episodes.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End results tables -->
+
+
+
+
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

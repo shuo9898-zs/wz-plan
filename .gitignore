@@ -15,3 +15,9 @@ geometry_checks/
 *.log
 *.mp4
 *.zip
+
+# GitHub Pages needs the curated demo videos and results figure in docs/.
+!docs/static/videos/demos/
+!docs/static/videos/demos/*.mp4
+!docs/static/images/results/
+!docs/static/images/results/*.png
