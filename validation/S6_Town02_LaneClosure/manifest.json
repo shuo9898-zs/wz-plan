@@ -1,0 +1,31 @@
+{
+  "scenario_id": "s6",
+  "town": "Town02",
+  "status": "blocked",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "validation",
+  "template_status": "owner validation geometry, OD and SUMO platoon route staged; pending live Town02 check",
+  "blockers": [
+    "Render-check the forbidden rectangle, warning-construction board, cones, Ego spawn, directed finish crossing, and -7>-8 oncoming platoon before use."
+  ],
+  "warnings": [
+    "The platoon size/headway/gap fields and car speed distribution exactly preserve the current training S6 contract.",
+    "CARLA-SUMO lateral_shift is 0.0 m so the -7>-8 SUMO traffic no longer maps through the authored work-zone strip.",
+    "The large board uses the warningconstruction visual asset at the supplied yaw=180 degrees."
+  ]
+}

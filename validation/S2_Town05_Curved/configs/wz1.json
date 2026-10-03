@@ -1,0 +1,195 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "direction": "counter_clockwise",
+    "received_layout_names": [
+      "validation_wz1_a"
+    ],
+    "geometry_note": "The validation curved forbidden polygon is reconstructed on the CARLA driving lane from the supplied sm_trafficcones_03 head marker to Cone Final. All coordinates below are metres after division by 100.",
+    "visual_note": "The owner supplied one sm_trafficcones_03 polygon-head marker and no workers.",
+    "dataset_split": "validation",
+    "template_note": "Unseen validation WZ1 geometry and its single OD pair were owner-authored on 2026-08-22."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": -189.0,
+        "x_max": -165.0,
+        "y_min": -145.7,
+        "y_max": -131.0,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [],
+        "traffic_cones": [
+          [
+            -173.0,
+            -143.6
+          ],
+          [
+            -175.5,
+            -141.2
+          ],
+          [
+            -179.0,
+            -138.9
+          ],
+          [
+            -181.6,
+            -137.1
+          ],
+          [
+            -183.7,
+            -135.1
+          ],
+          [
+            -186.3,
+            -133.2
+          ],
+          [
+            -189.0,
+            -131.0
+          ]
+        ],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -165.0,
+          "head_y": -145.7,
+          "head_z": 0.0,
+          "tail_x": -189.0,
+          "tail_y": -131.0,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [
+          {
+            "kind": "polygon_head_marker",
+            "asset_hint_supplied": "sm_trafficcones_03",
+            "location": [
+              -165.0,
+              -145.7
+            ],
+            "rotation_deg": [
+              0.0,
+              0.0,
+              90.0
+            ]
+          }
+        ],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone",
+        "workers": []
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {
+        "location_cm": [
+          -14500.0,
+          -14600.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 180.0
+        }
+      },
+      {
+        "location_cm": [
+          -14250.0,
+          -14600.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 180.0
+        }
+      },
+      {
+        "location_cm": [
+          -14000.0,
+          -14600.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 180.0
+        }
+      }
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [
+      [
+        -18990.0,
+        -10300.0
+      ],
+      [
+        -19770.0,
+        -10300.0
+      ]
+    ],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": 90.0
+  },
+  "episode": {
+    "max_steps": 600,
+    "sim_dt": 0.1,
+    "sync_hz": 10.0
+  },
+  "sumo": {
+    "bg_routes": [
+      "bg_route_01",
+      "bg_route_02"
+    ],
+    "bg_route_depart_pos_ranges_m": {
+      "bg_route_02": [
+        30.0,
+        30.0
+      ]
+    },
+    "bg_route_traffic_overrides": {
+      "bg_route_02": {
+        "initial_background_vehicles": 5,
+        "max_background_vehicles": 5,
+        "bg_spawn_rate_veh_s": 0.0
+      }
+    },
+    "step_length": 0.1,
+    "sumo_gui": false,
+    "port": 8813,
+    "ego_proxy_id": "ego_proxy",
+    "ped_proxy_prefix": "ped_proxy_",
+    "initial_background_vehicles": 5,
+    "max_background_vehicles": 5,
+    "bg_spawn_rate_veh_s": 0.0,
+    "bg_vtype": "car"
+  },
+  "carla": {
+    "road_heading_deg": 180.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town05",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": 0.0
+  },
+  "ego_role": "hero"
+}

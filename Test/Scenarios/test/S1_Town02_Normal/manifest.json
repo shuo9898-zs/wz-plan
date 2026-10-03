@@ -1,0 +1,37 @@
+{
+  "scenario_id": "s1",
+  "town": "Town02",
+  "status": "ready",
+  "live_verification": {
+    "verified_at": "2026-09-01",
+    "method": "rendered audit still plus one completed episode per origin",
+    "artifacts": "Test/geometry_checks"
+  },
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "test",
+  "experiment_label": "S5 High Traffic",
+  "template_status": "owner-authored S5 High Traffic test case live-verified in Town02",
+  "blockers": [],
+  "warnings": [
+    "Stable internal identity remains s1 even though the experiment display role is S5 High Traffic after the S1/S5 naming swap.",
+    "No large warning board was supplied; the forbidden rectangle is the full envelope of Cone Head, four middle cones and Cone Final.",
+    "CARLA-SUMO lateral_shift is -4.0 m: edge 5 passenger traffic maps near CARLA y=187.6 m instead of y=183.6 m at shift 0; +4.0 m would move it farther away to about y=179.6 m.",
+    "Rear routes 6>5>4 and -10>-9>5>4 share the reduced 10 initial / 20 max / 1.0 veh/s pool; front route 5>4 still requests exactly five vehicles at departPos 10 m.",
+    "All S5 SUMO background streams keep tau=1.2 s but use minGap=8.0 m, providing at least 8 m bumper-to-bumper clearance (about 12.5 m centre-to-centre for 4.5 m cars) without changing traffic counts."
+  ]
+}

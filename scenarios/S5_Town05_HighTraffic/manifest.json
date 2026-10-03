@@ -1,0 +1,19 @@
+{
+  "scenario_id": "s5",
+  "town": "Town05",
+  "status": "ready",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "warnings": [
+    "CARLA geometry and OD were converted from owner-provided Unreal centimetres to runtime metres",
+    "The Town05 network was normalized for the installed SUMO 1.18 runtime without changing road topology",
+    "Traffic demand currently uses 8 initial vehicles, 24 vehicles maximum, and 1.2 vehicles/second"
+  ],
+  "work_zones": [
+    {"id": "wz1", "config": "configs/wz1.json", "route": "sumo/routes/wz1.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz2", "config": "configs/wz2.json", "route": "sumo/routes/wz2.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz3", "config": "configs/wz3.json", "route": "sumo/routes/wz3.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scenario_id": "s2",
+  "town": "Town05",
+  "status": "experimental",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "curved_forbidden",
+  "reward_profile": "curved_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "blockers": [],
+  "warnings": [
+    "All owner-authored Unreal coordinates were converted from centimetres to CARLA metres in the four canonical WZ configs.",
+    "WZ2-A's malformed second cone (15480,15330) was interpreted as (-8290,15330) from the ordered curve sequence; the correction is recorded in configs/wz2.json.",
+    "WZ4-B's supplied polygon tail repeated its cone head; the canonical polygon instead ends at the supplied Cone Final (-18443.005859,13040.02832), recorded in configs/wz4.json.",
+    "Visual prop blueprint names, rotations, and worker annotations are preserved as non-runtime visual_debug metadata.",
+    "S2 steering uses the exact local CARLA Driving-lane heading plus the PPO +/-30 degree residual; the forbidden polygon centerline is never used as a steering target.",
+    "S2 intentionally retains destination-distance progress until an owner-authored legal ego reference path exists; using the forbidden polygon centerline for arc reward would reward driving into the work zone.",
+    "All twelve polygon projections, origin points, finish-line crossings, and SUMO-to-CARLA alignment still require rendered Town05 validation before S2 can be promoted from experimental to ready.",
+    "Town05 expected_road_id, expected_lane_id, polygon half-width, and CARLA lateral_shift remain live-calibration fields."
+  ],
+  "work_zones": [
+    {
+      "id": "wz1",
+      "direction": "counter_clockwise",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]
+    },
+    {
+      "id": "wz2",
+      "direction": "counter_clockwise",
+      "config": "configs/wz2.json",
+      "route": "sumo/routes/wz2.rou.xml",
+      "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]
+    },
+    {
+      "id": "wz3",
+      "direction": "clockwise_reverse",
+      "config": "configs/wz3.json",
+      "route": "sumo/routes/wz3.rou.xml",
+      "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]
+    },
+    {
+      "id": "wz4",
+      "direction": "clockwise_reverse",
+      "config": "configs/wz4.json",
+      "route": "sumo/routes/wz4.rou.xml",
+      "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]
+    }
+  ]
+}

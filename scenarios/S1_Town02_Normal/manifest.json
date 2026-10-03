@@ -1,0 +1,14 @@
+{
+  "scenario_id": "s1",
+  "town": "Town02",
+  "status": "ready",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {"id": "wz1", "config": "configs/wz1.json", "route": "sumo/routes/wz1.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz2", "config": "configs/wz2.json", "route": "sumo/routes/wz2.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz3", "config": "configs/wz3.json", "route": "sumo/routes/wz3.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]}
+  ]
+}

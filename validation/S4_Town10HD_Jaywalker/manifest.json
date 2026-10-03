@@ -1,0 +1,32 @@
+{
+  "scenario_id": "s4",
+  "town": "Town10HD",
+  "status": "blocked",
+  "traffic_backend": "carla_only",
+  "geometry_profile": "forbidden_workzone_jaywalker",
+  "reward_profile": "standard_workzone",
+  "sumo_network": null,
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": null,
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "validation",
+  "template_status": "owner validation geometry, jaywalker path and OD staged; pending live Town10HD check",
+  "blockers": [
+    "Render-check the board/cones, Ego spawn, pedestrian spawn height/path, all three trigger gates, and directed finish crossing before use."
+  ],
+  "warnings": [
+    "CARLA-only: this validation setting must never launch SUMO or create a pedestrian proxy.",
+    "The supplied board x=11420 cm was interpreted as x=-11420 cm because all co-located cones, pedestrian points, origin and destination use negative x.",
+    "Pedestrian spawn z uses the training S4/WZ2 live-calibrated 0.75 m; the supplied 0.50 m remains on collision/disappear reference points.",
+    "Origin 2 begins inside the 45 m jaywalker gate, so that first event is queued immediately at episode reset; all three Ego origins use the owner-supplied z=0 m and require live spawn verification."
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "direction": "clockwise_reverse",
+    "received_layout_names": ["Reverse WK4_a", "WK4_b", "WK4_c"],
+    "geometry_note": "Each curved forbidden polygon is reconstructed from the supplied construction board to Cone Final. All coordinates below are metres after division by 100.",
+    "correction_note": "WZ4-B's supplied polygon-tail example (-17990.359375,13733.106445) repeats Cone head. The canonical tail uses the explicitly supplied Cone Final (-18443.005859,13040.02832)."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": -181.93005859,
+        "x_max": -166.2,
+        "y_min": 135.0002832,
+        "y_max": 146.4,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [[-166.2, 146.4]],
+        "traffic_cones": [[-173.23005859, 142.9002832], [-174.83005859, 141.0002832], [-177.13005859, 138.9002832], [-179.63005859, 136.6002832], [-181.93005859, 135.0002832]],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -166.2,
+          "head_y": 146.4,
+          "head_z": 0.0,
+          "tail_x": -181.93005859,
+          "tail_y": 135.0002832,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [{"kind": "warning_sign", "asset_hint_supplied": "carla.bp_warningconstruction2", "location": [-166.2, 146.4], "rotation_deg": [0.0, 0.0, -90.0]}],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone",
+        "workers": [
+          {"source_label": "Wklow", "location": [-179.2, 138.6], "rotation_deg": [0.0, 0.0, 300.0]},
+          {"source_label": "wkstand", "location": [-176.4, 141.6], "rotation_deg": [0.0, 0.0, 140.0]}
+        ]
+      }
+    },
+    "b": {
+      "workzone": {
+        "x_min": -184.43005859,
+        "x_max": -173.6771875,
+        "y_min": 130.4002832,
+        "y_max": 142.95530273,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [[-173.6771875, 142.95530273]],
+        "traffic_cones": [[-179.90359375, 137.33106445], [-180.73005859, 135.1002832], [-181.93005859, 133.2002832], [-183.23005859, 131.8002832], [-184.43005859, 130.4002832]],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -173.6771875,
+          "head_y": 142.95530273,
+          "head_z": 0.0,
+          "tail_x": -184.43005859,
+          "tail_y": 130.4002832,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [{"kind": "warning_sign", "asset_hint_supplied": "carla.bp_warningconstruction2", "location": [-173.6771875, 142.95530273], "rotation_deg": [0.0, 0.0, -90.0]}],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone",
+        "workers": [
+          {"source_label": "Wklow", "location": [-183.1, 133.8], "rotation_deg": [0.0, 0.0, 300.0]},
+          {"source_label": "wkstand", "location": [-181.6, 136.1], "rotation_deg": [0.0, 0.0, 140.0]}
+        ],
+        "source_correction": {"field": "workzone.polygon_config.tail", "supplied_example_cm": [-17990.359375, 13733.106445], "interpreted_from_cone_final_cm": [-18443.005859, 13040.02832]}
+      }
+    },
+    "c": {
+      "workzone": {
+        "x_min": -187.43005859,
+        "x_max": -179.8,
+        "y_min": 122.3002832,
+        "y_max": 138.1,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [[-179.8, 138.1]],
+        "traffic_cones": [[-182.73005859, 134.0002832], [-183.43005859, 131.0002832], [-184.53005859, 128.6002832], [-186.33005859, 125.1002832], [-187.43005859, 122.3002832]],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -179.8,
+          "head_y": 138.1,
+          "head_z": 0.0,
+          "tail_x": -187.43005859,
+          "tail_y": 122.3002832,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [{"kind": "warning_sign", "asset_hint_supplied": "carla.bp_warningconstruction2", "location": [-179.8, 138.1], "rotation_deg": [0.0, 0.0, -90.0]}],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone",
+        "workers": [
+          {"source_label": "Wklow", "location": [-186.3, 127.7], "rotation_deg": [0.0, 0.0, 300.0]},
+          {"source_label": "wkstand", "location": [-184.4, 131.9], "rotation_deg": [0.0, 0.0, 140.0]}
+        ]
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {"location_cm": [-14600.0, 14750.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": -180.0}},
+      {"location_cm": [-14600.0, 14410.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": -180.0}},
+      {"location_cm": [-14000.0, 14410.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": -180.0}}
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [[-18280.0, 10800.0], [-18990.0, 10800.0]],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": -90.0
+  },
+  "episode": {"max_steps": 600, "sim_dt": 0.1, "sync_hz": 10.0},
+  "sumo": {"bg_routes": ["bg_route_01", "bg_route_02"], "bg_route_depart_pos_ranges_m": {"bg_route_02": [30.0, 30.0]}, "bg_route_traffic_overrides": {"bg_route_02": {"initial_background_vehicles": 5, "max_background_vehicles": 5, "bg_spawn_rate_veh_s": 0.0}}, "step_length": 0.1, "sumo_gui": false, "port": 8813, "ego_proxy_id": "ego_proxy", "ped_proxy_prefix": "ped_proxy_", "initial_background_vehicles": 5, "max_background_vehicles": 5, "bg_spawn_rate_veh_s": 0.0, "bg_vtype": "car"},
+  "carla": {"road_heading_deg": -180.0, "lane_center_offset_m": 0.0, "lane_half_width": 3.5, "road_half_width": 5.0, "host": "localhost", "port": 2000, "tm_port": 8000, "timeout": 10.0, "town": "Town05", "fixed_delta_s": 0.1, "lateral_shift": 0.0},
+  "ego_role": "hero"
+}

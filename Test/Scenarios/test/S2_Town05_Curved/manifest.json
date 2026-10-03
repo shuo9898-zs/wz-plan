@@ -1,0 +1,36 @@
+{
+  "scenario_id": "s2",
+  "town": "Town05",
+  "status": "ready",
+  "live_verification": {
+    "verified_at": "2026-09-01",
+    "method": "rendered audit still plus one completed episode per origin",
+    "artifacts": "Test/geometry_checks"
+  },
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "curved_forbidden",
+  "reward_profile": "curved_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "direction": "counter_clockwise",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "test",
+  "template_status": "owner-authored final-test geometry, OD and SUMO routes live-verified in Town05",
+  "blockers": [],
+  "warnings": [
+    "The sm_trafficcones_03 marker is the polygon head and visual prop; it is not duplicated in the ordinary traffic_cones list.",
+    "Rear bg_route_01 requests five vehicles at base on owner path 21>-30>-33, materialized as 21>-30>-31>-32>-33 because SUMO requires every connector edge.",
+    "Front bg_route_02 interprets owner shorthand -30>-30 as the single-edge route -30 and requests five vehicles at position 35 m.",
+    "Both streams use the training S2/WZ1 car spacing: tau=2.4 s and minGap=2.5 m."
+  ]
+}

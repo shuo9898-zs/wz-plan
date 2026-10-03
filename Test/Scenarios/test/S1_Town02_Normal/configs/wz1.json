@@ -1,0 +1,158 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": [
+      "test_wz1_a"
+    ],
+    "bounds_note": "No large board was supplied for this test case; the forbidden rectangle is the full envelope from Cone Head to Cone Final and includes every supplied intermediate cone.",
+    "visual_note": "All supplied work-zone markers are ordinary traffic cones; no separate warning-sign prop is spawned.",
+    "dataset_split": "test",
+    "template_note": "Owner-authored final-test geometry, three-origin OD setup and three SUMO streams. This stable internal s1 package is displayed experimentally as S5 High Traffic; pending live Town02 verification."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": 72.3,
+        "x_max": 84.3,
+        "y_min": 190.2,
+        "y_max": 191.6,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [
+          [
+            84.3,
+            191.6
+          ],
+          [
+            83.0,
+            190.2
+          ],
+          [
+            80.6,
+            190.2
+          ],
+          [
+            77.6,
+            190.2
+          ],
+          [
+            74.7,
+            190.2
+          ],
+          [
+            72.3,
+            191.6
+          ]
+        ],
+        "closed_lanes": []
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {
+        "location_cm": [
+          14430.0,
+          18810.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 180.0
+        }
+      },
+      {
+        "location_cm": [
+          14090.0,
+          19170.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 180.0
+        }
+      },
+      {
+        "location_cm": [
+          14090.0,
+          18970.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 180.0
+        }
+      }
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [
+      [
+        5200.0,
+        18550.0
+      ],
+      [
+        5200.0,
+        19380.0
+      ]
+    ],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": 180.0
+  },
+  "episode": {
+    "max_steps": 600,
+    "sim_dt": 0.1,
+    "sync_hz": 10.0
+  },
+  "sumo": {
+    "bg_routes": [
+      "bg_route_01",
+      "bg_route_02",
+      "bg_route_03"
+    ],
+    "bg_route_depart_pos_ranges_m": {
+      "bg_route_03": [
+        10.0,
+        10.0
+      ]
+    },
+    "bg_route_traffic_overrides": {
+      "bg_route_03": {
+        "initial_background_vehicles": 5,
+        "max_background_vehicles": 5,
+        "bg_spawn_rate_veh_s": 0.0
+      }
+    },
+    "step_length": 0.1,
+    "sumo_gui": false,
+    "port": 8813,
+    "ego_proxy_id": "ego_proxy",
+    "ped_proxy_prefix": "ped_proxy_",
+    "initial_background_vehicles": 10,
+    "max_background_vehicles": 20,
+    "bg_spawn_rate_veh_s": 1.0,
+    "bg_vtype": "car"
+  },
+  "carla": {
+    "road_heading_deg": 180.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town02",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": -4.0
+  },
+  "ego_role": "hero"
+}

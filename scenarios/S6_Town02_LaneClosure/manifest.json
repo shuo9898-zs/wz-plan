@@ -1,0 +1,20 @@
+{
+  "scenario_id": "s6",
+  "town": "Town02",
+  "status": "ready",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "warnings": [
+    "CARLA geometry and OD were converted from owner-provided Unreal centimetres to runtime metres",
+    "The owner reports that some cone orientations are reversed; supplied cone coordinates are staged unchanged pending visual correction",
+    "WZ1's supplied negative-Y mid-cone is preserved for visualization, while the owner-confirmed positive-Y forbidden region remains unchanged",
+    "No WZ3 warning-sign coordinate was supplied"
+  ],
+  "work_zones": [
+    {"id": "wz1", "config": "configs/wz1.json", "route": "sumo/routes/wz1.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz2", "config": "configs/wz2.json", "route": "sumo/routes/wz2.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz3", "config": "configs/wz3.json", "route": "sumo/routes/wz3.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]}
+  ]
+}

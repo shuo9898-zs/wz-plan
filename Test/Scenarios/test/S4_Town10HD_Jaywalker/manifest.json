@@ -1,0 +1,35 @@
+{
+  "scenario_id": "s4",
+  "town": "Town10HD",
+  "status": "ready",
+  "live_verification": {
+    "verified_at": "2026-09-01",
+    "method": "rendered audit still plus one completed episode per origin",
+    "artifacts": "Test/geometry_checks"
+  },
+  "traffic_backend": "carla_only",
+  "geometry_profile": "forbidden_workzone_jaywalker",
+  "reward_profile": "standard_workzone",
+  "sumo_network": null,
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": null,
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "test",
+  "template_status": "owner-authored S4 test case live-verified in Town10HD",
+  "blockers": [],
+  "warnings": [
+    "CARLA-only: this test setting must never launch SUMO or create a pedestrian proxy.",
+    "The positive-x board coordinate (110.0, 30.0) m is preserved exactly as owner supplied.",
+    "Pedestrian spawn uses the owner-supplied z=0.70 m; collision, disappear and trigger-anchor references use z=0.50 m.",
+    "The three Ego origins start 50 m, 55 m and 60 m before the trigger anchor; none starts inside the outer 45 m gate."
+  ]
+}

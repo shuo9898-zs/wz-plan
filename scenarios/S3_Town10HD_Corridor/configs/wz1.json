@@ -1,0 +1,112 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": ["8 interior pairs", "12 interior pairs", "20 interior pairs"],
+    "corridor_note": "Owner-authored boundary and cone coordinates were divided by 100 and stored directly in CARLA metres.",
+    "cone_note": "Each count means interior pairs; both endpoint pairs are also present. Cones are visualization-only.",
+    "origin_z_note": "Owner-authored Unreal Z=50 cm is represented as runtime z_m=0.5."
+  },
+  "geometry_mode": "drivable_corridor",
+  "coordinates": {"source_unit": "unreal_centimeter", "corridor_unit": "carla_meter", "units_per_meter": 1.0},
+  "layouts": {
+    "a": {
+      "corridor": {
+        "geometry_mode": "safe_corridor",
+        "left_boundary_points": [[-20.0, -59.5], [40.0, -59.5]],
+        "right_boundary_points": [[-20.0, -55.8], [40.0, -55.8]],
+        "boundary_tolerance_m": 0.0,
+        "corridor_open_ends": true,
+        "interior_pair_count": 8,
+        "traffic_cones": [
+          [-20.0, -59.5], [-20.0, -55.8],
+          [-13.333333, -59.5], [-13.333333, -55.8],
+          [-6.666667, -59.5], [-6.666667, -55.8],
+          [0.0, -59.5], [0.0, -55.8],
+          [6.666667, -59.5], [6.666667, -55.8],
+          [13.333333, -59.5], [13.333333, -55.8],
+          [20.0, -59.5], [20.0, -55.8],
+          [26.666667, -59.5], [26.666667, -55.8],
+          [33.333333, -59.5], [33.333333, -55.8],
+          [40.0, -59.5], [40.0, -55.8]
+        ]
+      }
+    },
+    "b": {
+      "corridor": {
+        "geometry_mode": "safe_corridor",
+        "left_boundary_points": [[-20.0, -59.5], [40.0, -59.5]],
+        "right_boundary_points": [[-20.0, -55.8], [40.0, -55.8]],
+        "boundary_tolerance_m": 0.0,
+        "corridor_open_ends": true,
+        "interior_pair_count": 12,
+        "traffic_cones": [
+          [-20.0, -59.5], [-20.0, -55.8],
+          [-15.384615, -59.5], [-15.384615, -55.8],
+          [-10.769231, -59.5], [-10.769231, -55.8],
+          [-6.153846, -59.5], [-6.153846, -55.8],
+          [-1.538462, -59.5], [-1.538462, -55.8],
+          [3.076923, -59.5], [3.076923, -55.8],
+          [7.692308, -59.5], [7.692308, -55.8],
+          [12.307692, -59.5], [12.307692, -55.8],
+          [16.923077, -59.5], [16.923077, -55.8],
+          [21.538462, -59.5], [21.538462, -55.8],
+          [26.153846, -59.5], [26.153846, -55.8],
+          [30.769231, -59.5], [30.769231, -55.8],
+          [35.384615, -59.5], [35.384615, -55.8],
+          [40.0, -59.5], [40.0, -55.8]
+        ]
+      }
+    },
+    "c": {
+      "corridor": {
+        "geometry_mode": "safe_corridor",
+        "left_boundary_points": [[-20.0, -59.5], [40.0, -59.5]],
+        "right_boundary_points": [[-20.0, -55.8], [40.0, -55.8]],
+        "boundary_tolerance_m": 0.0,
+        "corridor_open_ends": true,
+        "interior_pair_count": 20,
+        "traffic_cones": [
+          [-20.0, -59.5], [-20.0, -55.8],
+          [-17.142857, -59.5], [-17.142857, -55.8],
+          [-14.285714, -59.5], [-14.285714, -55.8],
+          [-11.428571, -59.5], [-11.428571, -55.8],
+          [-8.571429, -59.5], [-8.571429, -55.8],
+          [-5.714286, -59.5], [-5.714286, -55.8],
+          [-2.857143, -59.5], [-2.857143, -55.8],
+          [0.0, -59.5], [0.0, -55.8],
+          [2.857143, -59.5], [2.857143, -55.8],
+          [5.714286, -59.5], [5.714286, -55.8],
+          [8.571429, -59.5], [8.571429, -55.8],
+          [11.428571, -59.5], [11.428571, -55.8],
+          [14.285714, -59.5], [14.285714, -55.8],
+          [17.142857, -59.5], [17.142857, -55.8],
+          [20.0, -59.5], [20.0, -55.8],
+          [22.857143, -59.5], [22.857143, -55.8],
+          [25.714286, -59.5], [25.714286, -55.8],
+          [28.571429, -59.5], [28.571429, -55.8],
+          [31.428571, -59.5], [31.428571, -55.8],
+          [34.285714, -59.5], [34.285714, -55.8],
+          [37.142857, -59.5], [37.142857, -55.8],
+          [40.0, -59.5], [40.0, -55.8]
+        ]
+      }
+    }
+  },
+  "travel_direction": {"x": 1.0, "y": 0.0},
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {"location_cm": [-2000.0, -5770.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 0.0}},
+      {"location_cm": [-2500.0, -5800.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 0.0}},
+      {"location_cm": [-3000.0, -6100.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 0.0}}
+    ]
+  },
+  "destination": {"mode": "finish_line", "line_cm": [[6000.0, -5580.0], [6000.0, -6250.0]], "crossing_reference": "vehicle_center", "crossing_heading_deg": 0.0},
+  "episode": {"max_steps": 600, "sim_dt": 0.1, "sync_hz": 10.0},
+  "sumo": {"bg_routes": ["bg_route_01", "bg_route_02"], "bg_route_traffic_overrides": {"bg_route_02": {"initial_background_vehicles": 5, "max_background_vehicles": 5, "bg_spawn_rate_veh_s": 0.0}}, "step_length": 0.1, "sumo_gui": false, "port": 8813, "ego_proxy_id": "ego_proxy", "ped_proxy_prefix": "ped_proxy_", "initial_background_vehicles": 20, "max_background_vehicles": 40, "bg_spawn_rate_veh_s": 2.0, "bg_vtype": "car"},
+  "carla": {"road_heading_deg": 0.0, "lane_center_offset_m": 0.0, "lane_half_width": 3.5, "road_half_width": 5.0, "host": "localhost", "port": 2000, "tm_port": 8000, "timeout": 10.0, "town": "Town10HD", "fixed_delta_s": 0.1, "lateral_shift": 0},
+  "ego_role": "hero"
+}

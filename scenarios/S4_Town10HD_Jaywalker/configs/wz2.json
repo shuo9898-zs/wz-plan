@@ -1,0 +1,138 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": ["Wkz2_a", "Wkz2_b", "Wkz2_c"],
+    "traffic_note": "CARLA-only: Ego plus scripted jaywalkers; no SUMO network, route, traffic, or pedestrian proxy.",
+    "trigger_note": "No WZ2 board coordinate was supplied, so each layout's cone head is the explicit 45/30/15 m trigger anchor.",
+    "collision_target_note": "The collision target is retained as an owner reference; the controlled path is spawn to disappear.",
+    "rotation_note": "Owner rotation is preserved exactly. Runtime movement follows the spawn-to-disappear vector.",
+    "spawn_height_note": "Town10HD live calibration: all WZ2 layouts require z=0.75 m because CARLA rejects their exact x/y transforms at z=0.50 m."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": -50.00, "x_max": -48.70, "y_min": 45.00, "y_max": 57.00,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [[-48.70, 45.00], [-49.50, 47.00], [-49.80, 49.00], [-50.00, 51.00], [-49.80, 53.00], [-49.50, 55.00], [-48.70, 57.00]],
+        "closed_lanes": []
+      },
+      "jaywalker": {
+        "spawn": [-54.00, 59.00, 0.75],
+        "collision_target": [-52.00, 59.00, 0.50],
+        "disappear": [-47.00, 59.00, 0.50],
+        "trigger_anchor": [-48.70, 45.00, 0.50],
+        "yaw_deg": -90.0,
+        "speed_mps": 2.0,
+        "trigger_distances_m": [45.0, 30.0, 15.0],
+        "disappear_radius_m": 0.5,
+        "blueprint": "walker.pedestrian.0001",
+        "verified": false
+      },
+      "origin": {
+        "mode": "absolute_spawn_points",
+        "scope": "layout_specific",
+        "selection": "uniform_random",
+        "spawn_points": [
+          {"location_cm": [-4870.0, -500.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+          {"location_cm": [-4870.0, -1000.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+          {"location_cm": [-5210.0, -500.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}}
+        ]
+      },
+      "destination": {
+        "mode": "finish_line",
+        "line_cm": [[-4680.0, 7700.0], [-5370.0, 7700.0]],
+        "crossing_reference": "vehicle_center"
+      }
+    },
+    "b": {
+      "workzone": {
+        "x_min": -50.00, "x_max": -48.70, "y_min": 61.00, "y_max": 73.00,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [[-48.70, 61.00], [-49.50, 63.00], [-49.80, 65.00], [-50.00, 67.00], [-49.80, 69.00], [-49.50, 71.00], [-48.70, 73.00]],
+        "closed_lanes": []
+      },
+      "jaywalker": {
+        "spawn": [-54.00, 75.00, 0.75],
+        "collision_target": [-52.00, 75.00, 0.50],
+        "disappear": [-47.00, 75.00, 0.50],
+        "trigger_anchor": [-48.70, 61.00, 0.50],
+        "yaw_deg": -90.0,
+        "speed_mps": 2.0,
+        "trigger_distances_m": [45.0, 30.0, 15.0],
+        "disappear_radius_m": 0.5,
+        "blueprint": "walker.pedestrian.0001",
+        "verified": false
+      },
+      "origin": {
+        "mode": "absolute_spawn_points",
+        "scope": "layout_specific",
+        "selection": "uniform_random",
+        "spawn_points": [
+          {"location_cm": [-4870.0, 1100.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+          {"location_cm": [-4870.0, 600.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+          {"location_cm": [-5210.0, 1100.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}}
+        ]
+      },
+      "destination": {
+        "mode": "finish_line",
+        "line_cm": [[-4680.0, 9300.0], [-5370.0, 9300.0]],
+        "crossing_reference": "vehicle_center"
+      }
+    },
+    "c": {
+      "workzone": {
+        "x_min": -50.00, "x_max": -48.70, "y_min": 77.00, "y_max": 89.00,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [[-48.70, 77.00], [-49.50, 79.00], [-49.80, 81.00], [-50.00, 83.00], [-49.80, 85.00], [-49.50, 87.00], [-48.70, 89.00]],
+        "closed_lanes": []
+      },
+      "jaywalker": {
+        "spawn": [-54.00, 91.00, 0.75],
+        "collision_target": [-52.00, 91.00, 0.50],
+        "disappear": [-47.00, 91.00, 0.50],
+        "trigger_anchor": [-48.70, 77.00, 0.50],
+        "yaw_deg": -90.0,
+        "speed_mps": 2.0,
+        "trigger_distances_m": [45.0, 30.0, 15.0],
+        "disappear_radius_m": 0.5,
+        "blueprint": "walker.pedestrian.0001",
+        "verified": false
+      },
+      "origin": {
+        "mode": "absolute_spawn_points",
+        "scope": "layout_specific",
+        "selection": "uniform_random",
+        "spawn_points": [
+          {"location_cm": [-4870.0, 2700.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+          {"location_cm": [-4870.0, 2200.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+          {"location_cm": [-5210.0, 2200.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}}
+        ]
+      },
+      "destination": {
+        "mode": "finish_line",
+        "line_cm": [[-4680.0, 11520.0], [-5370.0, 11520.0]],
+        "crossing_reference": "vehicle_center"
+      }
+    }
+  },
+  "sumo": null,
+  "carla": {
+    "road_heading_deg": 90.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town10HD",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": 0.0
+  },
+  "episode": {"max_steps": 600, "sim_dt": 0.1, "sync_hz": 10.0},
+  "ego_role": "hero"
+}

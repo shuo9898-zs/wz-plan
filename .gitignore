@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+runs*/
+logs/
+results/
+output/
+demos/
+paper_stills/
+geometry_checks/
+*.log
+*.mp4
+*.zip

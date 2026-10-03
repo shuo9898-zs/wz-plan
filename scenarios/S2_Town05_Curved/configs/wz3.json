@@ -1,0 +1,121 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "direction": "clockwise_reverse",
+    "received_layout_names": ["Reverse WK3_a", "Reverse WK3_b", "Reverse WK3_c"],
+    "geometry_note": "Each curved forbidden polygon is reconstructed from the supplied sm_trafficcones_03 anchor to Cone Final. All coordinates below are metres after division by 100."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": -82.2,
+        "x_max": -52.3,
+        "y_min": 122.0,
+        "y_max": 146.0,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [],
+        "traffic_cones": [[-58.1, 130.0], [-60.0, 132.6], [-62.3, 135.33], [-65.2, 138.0], [-68.9, 140.66], [-73.8, 143.33], [-82.2, 146.0]],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -52.3,
+          "head_y": 122.0,
+          "head_z": 0.1,
+          "tail_x": -82.2,
+          "tail_y": 146.0,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [{"kind": "polygon_head_marker", "asset_hint_supplied": "sm_trafficcones_03", "location": [-52.3, 122.0, 0.1], "rotation_deg": [0.0, 0.0, 0.0]}],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone"
+      }
+    },
+    "b": {
+      "workzone": {
+        "x_min": -75.41005859,
+        "x_max": -53.5,
+        "y_min": 124.0,
+        "y_max": 144.7,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [],
+        "traffic_cones": [[-59.0, 132.0], [-61.6, 134.6], [-63.9, 137.33], [-67.4, 140.0], [-68.9, 140.66], [-72.4, 142.66], [-75.41005859, 144.7]],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -53.5,
+          "head_y": 124.0,
+          "head_z": 0.1,
+          "tail_x": -75.41005859,
+          "tail_y": 144.7,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [{"kind": "polygon_head_marker", "asset_hint_supplied": "sm_trafficcones_03", "location": [-53.5, 124.0, 0.1], "rotation_deg": [0.0, 0.0, 0.0]}],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone"
+      }
+    },
+    "c": {
+      "workzone": {
+        "x_min": -86.31,
+        "x_max": -54.1,
+        "y_min": 126.0,
+        "y_max": 146.7,
+        "geometry_mode": "forbidden_polygon",
+        "warning_signs": [],
+        "traffic_cones": [[-61.3, 134.0], [-65.8, 138.6], [-69.1, 140.83], [-73.3, 143.2], [-77.0, 144.76], [-80.5, 145.66], [-86.31, 146.7]],
+        "closed_lanes": [],
+        "polygon_config": {
+          "head_x": -54.1,
+          "head_y": 126.0,
+          "head_z": 0.1,
+          "tail_x": -86.31,
+          "tail_y": 146.7,
+          "tail_z": 0.0,
+          "sample_spacing_m": 0.5,
+          "half_width_m": null,
+          "margin_m": 0.0,
+          "expected_road_id": null,
+          "expected_lane_id": null
+        }
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [{"kind": "polygon_head_marker", "asset_hint_supplied": "sm_trafficcones_03", "location": [-54.1, 126.0, 0.1], "rotation_deg": [0.0, 0.0, 0.0]}],
+        "traffic_cone_asset_hint_supplied": "sm_construction cone"
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {"location_cm": [-5140.0, 10200.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+      {"location_cm": [-5140.0, 9700.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+      {"location_cm": [-5440.0, 9700.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}}
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [[-10751.0, 14950.0], [-10751.0, 14130.0]],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": 180.0
+  },
+  "episode": {"max_steps": 600, "sim_dt": 0.1, "sync_hz": 10.0},
+  "sumo": {"bg_routes": ["bg_route_01", "bg_route_02"], "bg_route_depart_pos_ranges_m": {"bg_route_02": [30.0, 30.0]}, "bg_route_traffic_overrides": {"bg_route_02": {"initial_background_vehicles": 5, "max_background_vehicles": 5, "bg_spawn_rate_veh_s": 0.0}}, "step_length": 0.1, "sumo_gui": false, "port": 8813, "ego_proxy_id": "ego_proxy", "ped_proxy_prefix": "ped_proxy_", "initial_background_vehicles": 5, "max_background_vehicles": 5, "bg_spawn_rate_veh_s": 0.0, "bg_vtype": "car"},
+  "carla": {"road_heading_deg": 90.0, "lane_center_offset_m": 0.0, "lane_half_width": 3.5, "road_half_width": 5.0, "host": "localhost", "port": 2000, "tm_port": 8000, "timeout": 10.0, "town": "Town05", "fixed_delta_s": 0.1, "lateral_shift": 0.0},
+  "ego_role": "hero"
+}

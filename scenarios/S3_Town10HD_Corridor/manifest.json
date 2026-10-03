@@ -1,0 +1,21 @@
+{
+  "scenario_id": "s3",
+  "town": "Town10HD",
+  "status": "experimental",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "safe_corridor",
+  "reward_profile": "safe_corridor",
+  "sumo_network": "sumo/network.net.xml",
+  "blockers": [],
+  "warnings": [
+    "WZ1/WZ2 layouts a/b/c differ only in demo cone density (8/12/20 interior pairs); their training corridor and OD are identical.",
+    "Safe-corridor containment activates after the entrance and stops after the open exit; CARLA road validity remains authoritative outside the corridor.",
+    "The local corridor look-ahead heading, centerline-progress reward, and directed finish-line crossing are implemented for experimental PPO validation.",
+    "Updated WZ3 origins use a lane-aligned -90 degree yaw; no separate entry approach is added when the selected origin is already covered by the corridor polygon."
+  ],
+  "work_zones": [
+    {"id": "wz1", "config": "configs/wz1.json", "route": "sumo/routes/wz1.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz2", "config": "configs/wz2.json", "route": "sumo/routes/wz2.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz3", "config": "configs/wz3.json", "route": "sumo/routes/wz3.rou.xml", "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]}
+  ]
+}

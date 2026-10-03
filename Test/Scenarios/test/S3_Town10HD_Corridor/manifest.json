@@ -1,0 +1,34 @@
+{
+  "scenario_id": "s3",
+  "town": "Town10HD",
+  "status": "ready",
+  "live_verification": {
+    "verified_at": "2026-09-01",
+    "method": "rendered audit still plus one completed episode per origin",
+    "artifacts": "Test/geometry_checks"
+  },
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "safe_corridor",
+  "reward_profile": "safe_corridor",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "test",
+  "template_status": "owner-authored final-test corridor, OD and SUMO routes live-verified in Town10HD",
+  "blockers": [],
+  "warnings": [
+    "Each side has twelve interior cones between its head and final cone: fourteen stations per side and twenty-eight cones total.",
+    "Rear bg_route_01 requests five vehicles at base on -10>-17>7; front bg_route_02 requests five at edge -10 position 90 m on -10>-17>7>6.",
+    "CARLA-SUMO lateral_shift is 0.0 m for this test setting."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": ["Wkzone3_a", "Wk3_2b", "Wkzone3_c"],
+    "origin_z_note": "Owner-authored road-surface Z=0 is lifted to runtime z_m=0.5 so the CARLA vehicle bounding box does not overlap the road at spawn.",
+    "layout_mapping": {"a": "Wkzone3_a", "b": "Wk3_2b", "c": "Wkzone3_c"},
+    "bounds_note": "Forbidden bounds use the exact manual cone envelope."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": 26.50, "x_max": 27.90, "y_min": 120.00, "y_max": 132.00,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [[27.90, 120.00], [27.00, 122.00], [26.70, 123.90], [26.50, 126.00], [26.70, 128.00], [27.00, 130.00], [27.90, 132.00]],
+        "closed_lanes": []
+      }
+    },
+    "b": {
+      "workzone": {
+        "x_min": 26.50, "x_max": 27.90, "y_min": 130.00, "y_max": 142.00,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [[27.90, 130.00], [27.00, 132.00], [26.70, 133.90], [26.50, 136.00], [26.70, 138.00], [27.00, 140.00], [27.90, 142.00]],
+        "closed_lanes": []
+      }
+    },
+    "c": {
+      "workzone": {
+        "x_min": 26.50, "x_max": 27.90, "y_min": 140.00, "y_max": 152.00,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [[27.90, 140.00], [27.00, 142.00], [26.70, 143.90], [26.50, 146.00], [26.70, 148.00], [27.00, 150.00], [27.90, 152.00]],
+        "closed_lanes": []
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {"location_cm": [2800.0, 9600.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+      {"location_cm": [2460.0, 9600.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}},
+      {"location_cm": [2460.0, 10500.0], "z_m": 0.5, "rotation_deg": {"pitch": 0.0, "roll": 0.0, "yaw": 90.0}}
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [[2200.0, 17200.0], [3000.0, 17200.0]],
+    "crossing_reference": "vehicle_center"
+  },
+  "episode": {"max_steps": 600, "sim_dt": 0.1, "sync_hz": 10.0},
+  "sumo": {"bg_routes": ["bg_route_01", "bg_route_02"], "step_length": 0.1, "sumo_gui": false, "port": 8813, "ego_proxy_id": "ego_proxy", "ped_proxy_prefix": "ped_proxy_", "initial_background_vehicles": 8, "max_background_vehicles": 24, "bg_spawn_rate_veh_s": 1.2, "bg_vtype": "car"},
+  "carla": {"road_heading_deg": 90.0, "lane_center_offset_m": 0.0, "lane_half_width": 3.5, "road_half_width": 5.0, "host": "localhost", "port": 2000, "tm_port": 8000, "timeout": 10.0, "town": "Town05", "fixed_delta_s": 0.1, "lateral_shift": 0.0},
+  "ego_role": "hero"
+}

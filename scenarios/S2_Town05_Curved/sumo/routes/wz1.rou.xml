@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- S2 WZ1 counter-clockwise routes. Vehicles are injected only through TraCI. -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" vClass="passenger" length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5" sigma="0.5" tau="2.4" minGap="2.5"/>
+    <vType id="passenger" vClass="passenger" length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5" sigma="0.5" tau="1.2" minGap="2.5"/>
+    <route id="ego_placeholder" edges="43"/>
+    <route id="bg_route_01" edges="43 42 41"/>
+    <route id="bg_route_02" edges="42 41"/>
+</routes>

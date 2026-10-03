@@ -1,0 +1,273 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": [
+      "12 interior pairs"
+    ],
+    "corridor_note": "Owner-authored boundary and cone coordinates were divided by 100 and stored directly in CARLA metres.",
+    "cone_note": "Each count means interior pairs; both endpoint pairs are also present. These configured coordinates feed the V2 work-zone observation even when physical CARLA cone props are not spawned.",
+    "origin_z_note": "Owner-authored Unreal Z=50 cm is represented as runtime z_m=0.5.",
+    "dataset_split": "validation",
+    "template_note": "Unseen validation WZ1 geometry, OD and SUMO design were owner-authored on 2026-08-22."
+  },
+  "geometry_mode": "drivable_corridor",
+  "coordinates": {
+    "source_unit": "unreal_centimeter",
+    "corridor_unit": "carla_meter",
+    "units_per_meter": 1.0
+  },
+  "layouts": {
+    "a": {
+      "corridor": {
+        "geometry_mode": "safe_corridor",
+        "left_boundary_points": [
+          [
+            -20.0,
+            22.8
+          ],
+          [
+            40.0,
+            22.8
+          ]
+        ],
+        "right_boundary_points": [
+          [
+            -20.0,
+            26.4
+          ],
+          [
+            40.0,
+            26.4
+          ]
+        ],
+        "boundary_tolerance_m": 0.0,
+        "corridor_open_ends": true,
+        "interior_pair_count": 12,
+        "traffic_cones": [
+          [
+            -20.0,
+            22.8
+          ],
+          [
+            -20.0,
+            26.4
+          ],
+          [
+            -15.384615,
+            22.8
+          ],
+          [
+            -15.384615,
+            26.4
+          ],
+          [
+            -10.769231,
+            22.8
+          ],
+          [
+            -10.769231,
+            26.4
+          ],
+          [
+            -6.153846,
+            22.8
+          ],
+          [
+            -6.153846,
+            26.4
+          ],
+          [
+            -1.538462,
+            22.8
+          ],
+          [
+            -1.538462,
+            26.4
+          ],
+          [
+            3.076923,
+            22.8
+          ],
+          [
+            3.076923,
+            26.4
+          ],
+          [
+            7.692308,
+            22.8
+          ],
+          [
+            7.692308,
+            26.4
+          ],
+          [
+            12.307692,
+            22.8
+          ],
+          [
+            12.307692,
+            26.4
+          ],
+          [
+            16.923077,
+            22.8
+          ],
+          [
+            16.923077,
+            26.4
+          ],
+          [
+            21.538462,
+            22.8
+          ],
+          [
+            21.538462,
+            26.4
+          ],
+          [
+            26.153846,
+            22.8
+          ],
+          [
+            26.153846,
+            26.4
+          ],
+          [
+            30.769231,
+            22.8
+          ],
+          [
+            30.769231,
+            26.4
+          ],
+          [
+            35.384615,
+            22.8
+          ],
+          [
+            35.384615,
+            26.4
+          ],
+          [
+            40.0,
+            22.8
+          ],
+          [
+            40.0,
+            26.4
+          ]
+        ]
+      }
+    }
+  },
+  "travel_direction": {
+    "x": 1.0,
+    "y": 0.0
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {
+        "location_cm": [
+          -2880.0,
+          2470.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 0.0
+        }
+      },
+      {
+        "location_cm": [
+          -2000.0,
+          2470.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 0.0
+        }
+      },
+      {
+        "location_cm": [
+          -3000.0,
+          2470.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 0.0
+        }
+      }
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [
+      [
+        6000.0,
+        2280.0
+      ],
+      [
+        6000.0,
+        2640.0
+      ]
+    ],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": 0.0
+  },
+  "episode": {
+    "max_steps": 600,
+    "sim_dt": 0.1,
+    "sync_hz": 10.0
+  },
+  "sumo": {
+    "bg_routes": [
+      "bg_route_01",
+      "bg_route_02"
+    ],
+    "bg_route_depart_pos_ranges_m": {
+      "bg_route_02": [
+        30.0,
+        30.0
+      ]
+    },
+    "bg_route_traffic_overrides": {
+      "bg_route_02": {
+        "initial_background_vehicles": 5,
+        "max_background_vehicles": 5,
+        "bg_spawn_rate_veh_s": 0.0
+      }
+    },
+    "step_length": 0.1,
+    "sumo_gui": false,
+    "port": 8813,
+    "ego_proxy_id": "ego_proxy",
+    "ped_proxy_prefix": "ped_proxy_",
+    "initial_background_vehicles": 5,
+    "max_background_vehicles": 5,
+    "bg_spawn_rate_veh_s": 0.0,
+    "bg_vtype": "car"
+  },
+  "carla": {
+    "road_heading_deg": 0.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town10HD",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": 0
+  },
+  "ego_role": "hero"
+}

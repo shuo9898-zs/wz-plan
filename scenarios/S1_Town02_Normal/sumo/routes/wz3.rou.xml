@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  S1_WZ3 SUMO routes file
+  =======================
+  Work zone : edge 5  (east-west road from junction 298 to 188,
+                       x ≈ 58–129, y ≈ 117–121 in SUMO coords)
+              CARLA coords: y ≈ 183–187 m (ego travels westward / −X in CARLA)
+
+  Network note: Lane 5_1 is permanently closed in Town02_edit.net.xml
+  (disallow="all").  All traffic on edge 5 is forced onto lane 5_0.
+
+  Ego approach paths (both arrive at edge 5 via junction 298):
+      Path 1:  6 → 5 → 4    approach from junction 242 via edge 6 (from east)
+      Path 2: -9 → 5 → 4    approach from junction 132 via edge -9 (from south)
+
+  Loops used:
+      Path-1 loop: 17 → -13 → -14 → 6 → 5 → 4 → 0 → 2 → -18 → -19 → 17
+      Path-2 loop: 17 → -13 → -10 → -9 → 5 → 4 → 0 → 2 → -18 → -19 → 17
+          Note: -13 lane-1 turns left onto -10 at junction 20;
+                -10 turns right onto -9 at junction 132 (via :132_0_0).
+
+  All routes repeat twice for a full 120-s episode.
+  Path-1 loop ≈ 511 m × 2 ≈ 1 022 m  (sufficient at 13.89 m/s)
+  Path-2 loop ≈ 503 m × 2 ≈ 1 006 m
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ================================================================ -->
+    <!-- Vehicle types                                                     -->
+    <!-- ================================================================ -->
+
+    <vType id="car"
+           vClass="passenger"
+           length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5"
+           sigma="0.5" tau="1.2" minGap="2.5"/>
+
+    <vType id="truck"
+           vClass="truck"
+           length="7.5" width="2.4" height="3.0"
+           maxSpeed="11.1" accel="1.5" decel="3.5"
+           sigma="0.3" tau="1.5" minGap="3.0"/>
+
+    <vType id="passenger"
+           vClass="passenger"
+           length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5"
+           sigma="0.5" tau="1.2" minGap="2.5"/>
+
+    <!-- ================================================================ -->
+    <!-- Ego proxy placeholder route                                       -->
+    <!-- Ego approaches WZ3 via edge 6; position overridden by moveToXY.  -->
+    <!-- ================================================================ -->
+    <route id="ego_placeholder" edges="6"/>
+
+    <!-- ================================================================ -->
+    <!-- Background traffic: Path 1  (6 → 5 → 4)                         -->
+    <!-- Vehicles approach from junction 242 turning onto edge 6.         -->
+    <!-- Loop: 17 -13 -14 6 5 4 0 2 -18 -19                              -->
+    <!-- ================================================================ -->
+
+    <!-- Loop × 2, start from edge 17 -->
+    <route id="bg_route_01"
+           edges="17 -13 -14 6 5 4 0 2 -18 -19
+                  17 -13 -14 6 5 4 0 2 -18 -19 17"/>
+
+    <!-- Loop × 2, start from edge 6 (directly upstream of WZ3) -->
+    <route id="bg_route_02"
+           edges="6 5 4 0 2 -18 -19 17 -13 -14
+                  6 5 4 0 2 -18 -19 17 -13 -14 6"/>
+
+    <!-- Loop × 2, start from edge 5 (on the WZ edge) -->
+    <route id="bg_route_03"
+           edges="5 4 0 2 -18 -19 17 -13 -14 6
+                  5 4 0 2 -18 -19 17 -13 -14 6 5"/>
+
+    <!-- ================================================================ -->
+    <!-- Background traffic: Path 2  (-9 → 5 → 4)                        -->
+    <!-- Vehicles approach from junction 132 via edge -9 (north approach). -->
+    <!-- -13 lane-1 → -10 (left at jct 20) → -9 (right at jct 132) → 5  -->
+    <!-- Loop: 17 -13 -10 -9 5 4 0 2 -18 -19                             -->
+    <!-- ================================================================ -->
+
+    <!-- Loop × 2, start from edge 17 -->
+    <route id="bg_route_04"
+           edges="17 -13 -10 -9 5 4 0 2 -18 -19
+                  17 -13 -10 -9 5 4 0 2 -18 -19 17"/>
+
+    <!-- Loop × 2, start from edge -9 (directly upstream of WZ3) -->
+    <route id="bg_route_05"
+           edges="-9 5 4 0 2 -18 -19 17 -13 -10
+                  -9 5 4 0 2 -18 -19 17 -13 -10 -9"/>
+
+    <!-- Loop × 2, start from edge -10 -->
+    <route id="bg_route_06"
+           edges="-10 -9 5 4 0 2 -18 -19 17 -13
+                  -10 -9 5 4 0 2 -18 -19 17 -13 -10"/>
+
+</routes>

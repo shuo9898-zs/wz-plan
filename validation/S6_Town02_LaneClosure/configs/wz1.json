@@ -1,0 +1,171 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": [
+      "validation_wz1_a"
+    ],
+    "origin_z_note": "Owner-authored Unreal Z=50 cm is represented as runtime z_m=0.5.",
+    "bounds_note": "Per the owner instruction, the forbidden rectangle starts at the large warning-construction board and ends at Cone Final, while covering the complete lateral cone envelope.",
+    "cone_note": "Five owner-authored ordinary cones are stored in increasing longitudinal order; the large board is a separate visual prop and warning-sign observation point.",
+    "dataset_split": "validation",
+    "template_note": "Unseen validation WZ1 geometry, OD and the -7>-8 oncoming platoon route were owner-authored on 2026-08-22."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": 42.0,
+        "x_max": 43.1,
+        "y_min": 254.0,
+        "y_max": 270.0,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [
+          [
+            42.0,
+            254.0
+          ]
+        ],
+        "traffic_cones": [
+          [
+            42.0,
+            262.0
+          ],
+          [
+            42.8,
+            264.1
+          ],
+          [
+            43.1,
+            266.5
+          ],
+          [
+            42.8,
+            268.2
+          ],
+          [
+            42.0,
+            270.0
+          ]
+        ],
+        "closed_lanes": []
+      },
+      "visual_debug": {
+        "coordinate_unit": "carla_meter",
+        "props": [
+          {
+            "kind": "warning_sign",
+            "asset_hint_supplied": "carla.bp_warningconstruction2",
+            "location": [
+              42.0,
+              254.0,
+              0.0
+            ],
+            "rotation_deg": [
+              0.0,
+              0.0,
+              180.0
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {
+        "location_cm": [
+          4200.0,
+          20400.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 90.0
+        }
+      },
+      {
+        "location_cm": [
+          4200.0,
+          19900.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 90.0
+        }
+      },
+      {
+        "location_cm": [
+          4200.0,
+          20900.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 90.0
+        }
+      }
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [
+      [
+        3980.0,
+        29200.0
+      ],
+      [
+        4790.0,
+        29200.0
+      ]
+    ],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": 90.0
+  },
+  "episode": {
+    "max_steps": 600,
+    "sim_dt": 0.1,
+    "sync_hz": 10.0
+  },
+  "sumo": {
+    "bg_routes": [
+      "bg_route_01"
+    ],
+    "step_length": 0.1,
+    "sumo_gui": false,
+    "port": 8813,
+    "ego_proxy_id": "ego_proxy",
+    "ped_proxy_prefix": "ped_proxy_",
+    "traffic_pattern": "platoon",
+    "initial_background_vehicles": 0,
+    "max_background_vehicles": 4,
+    "bg_spawn_rate_veh_s": 0.0,
+    "platoon_size_min": 2,
+    "platoon_size_max": 2,
+    "platoon_headway_min_s": 2.0,
+    "platoon_headway_max_s": 2.5,
+    "platoon_gap_min_s": 30.0,
+    "platoon_gap_max_s": 36.0,
+    "bg_vtype": "car"
+  },
+  "carla": {
+    "road_heading_deg": 90.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town02",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": 0.0
+  },
+  "ego_role": "hero"
+}

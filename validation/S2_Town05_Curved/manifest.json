@@ -1,0 +1,32 @@
+{
+  "scenario_id": "s2",
+  "town": "Town05",
+  "status": "blocked",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "curved_forbidden",
+  "reward_profile": "curved_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "direction": "counter_clockwise",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "validation",
+  "template_status": "owner validation geometry, OD and SUMO routes staged; pending live Town05 check",
+  "blockers": [
+    "Render-check the projected polygon/lane, Ego spawn, directed finish crossing, props, and fixed 5+5 SUMO traffic before use."
+  ],
+  "warnings": [
+    "The sm_trafficcones_03 marker is the polygon head and visual prop; it is not duplicated in the ordinary traffic_cones list.",
+    "Rear bg_route_01 requests five vehicles at base on 46>45>44; front bg_route_02 requests five at edge 45 position 30 m.",
+    "Both streams use the training S2/WZ1 car spacing: tau=2.4 s and minGap=2.5 m."
+  ]
+}

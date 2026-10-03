@@ -1,0 +1,31 @@
+{
+  "scenario_id": "s3",
+  "town": "Town10HD",
+  "status": "blocked",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "safe_corridor",
+  "reward_profile": "safe_corridor",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "validation",
+  "template_status": "owner validation geometry, OD and SUMO routes staged; pending live Town10HD check",
+  "blockers": [
+    "Render-check the safe corridor, entry approach, Ego spawn, directed finish crossing, cones, and fixed 5+5 SUMO traffic before use."
+  ],
+  "warnings": [
+    "Each side has twelve interior cones between its head and final cone: fourteen stations per side and twenty-eight cones total.",
+    "Rear bg_route_01 requests five vehicles at base on -19>-20>-21; front bg_route_02 requests five at edge -20 position 30 m.",
+    "CARLA-SUMO lateral_shift is 0.0 m for this validation setting."
+  ]
+}

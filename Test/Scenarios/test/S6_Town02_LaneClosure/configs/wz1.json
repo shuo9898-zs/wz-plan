@@ -1,0 +1,169 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": [
+      "test_wz1_a"
+    ],
+    "origin_z_note": "Owner-authored Unreal Z=50 cm is represented as runtime z_m=0.5.",
+    "bounds_note": "No large board was supplied for this test case; the forbidden rectangle is the full envelope from Cone Head to Cone Final and includes every supplied intermediate cone.",
+    "cone_note": "Nine owner-authored ordinary cone coordinates are preserved in the supplied order; no separate warning-sign prop is spawned.",
+    "dataset_split": "test",
+    "template_note": "Owner-authored S6 final-test geometry and -12>16 oncoming platoon; Ego approach distances were aligned with validation and SUMO departPos was reset to the route start on 2026-09-02."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": 96.0,
+        "x_max": 112.0,
+        "y_min": 105.4,
+        "y_max": 107.0,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [],
+        "traffic_cones": [
+          [
+            96.0,
+            105.6
+          ],
+          [
+            110.5,
+            106.3
+          ],
+          [
+            108.6,
+            107.0
+          ],
+          [
+            105.9,
+            107.0
+          ],
+          [
+            103.3,
+            107.0
+          ],
+          [
+            100.6,
+            107.0
+          ],
+          [
+            98.9,
+            106.8
+          ],
+          [
+            97.5,
+            106.5
+          ],
+          [
+            112.0,
+            105.4
+          ]
+        ],
+        "closed_lanes": []
+      }
+    }
+  },
+  "origin": {
+    "mode": "absolute_spawn_points",
+    "scope": "scenario_workzone_shared_across_layouts",
+    "selection": "uniform_random",
+    "spawn_points": [
+      {
+        "location_cm": [
+          4600.0,
+          10550.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 0.0
+        }
+      },
+      {
+        "location_cm": [
+          4100.0,
+          10550.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 0.0
+        }
+      },
+      {
+        "location_cm": [
+          5100.0,
+          10550.0
+        ],
+        "z_m": 0.5,
+        "rotation_deg": {
+          "pitch": 0.0,
+          "roll": 0.0,
+          "yaw": 0.0
+        }
+      }
+    ]
+  },
+  "destination": {
+    "mode": "finish_line",
+    "line_cm": [
+      [
+        13200.0,
+        11150.0
+      ],
+      [
+        13200.0,
+        10330.0
+      ]
+    ],
+    "crossing_reference": "vehicle_center",
+    "crossing_heading_deg": 0.0
+  },
+  "episode": {
+    "max_steps": 600,
+    "sim_dt": 0.1,
+    "sync_hz": 10.0
+  },
+  "sumo": {
+    "bg_routes": [
+      "bg_route_01"
+    ],
+    "bg_route_depart_pos_ranges_m": {
+      "bg_route_01": [
+        0.0,
+        0.0
+      ]
+    },
+    "step_length": 0.1,
+    "sumo_gui": false,
+    "port": 8813,
+    "ego_proxy_id": "ego_proxy",
+    "ped_proxy_prefix": "ped_proxy_",
+    "traffic_pattern": "platoon",
+    "initial_background_vehicles": 0,
+    "max_background_vehicles": 4,
+    "bg_spawn_rate_veh_s": 0.0,
+    "platoon_size_min": 2,
+    "platoon_size_max": 2,
+    "platoon_headway_min_s": 2.0,
+    "platoon_headway_max_s": 2.5,
+    "platoon_gap_min_s": 30.0,
+    "platoon_gap_max_s": 36.0,
+    "bg_vtype": "car"
+  },
+  "carla": {
+    "road_heading_deg": 0.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town02",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": -4.0
+  },
+  "ego_role": "hero"
+}

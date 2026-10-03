@@ -1,0 +1,32 @@
+{
+  "scenario_id": "s5",
+  "town": "Town05",
+  "status": "blocked",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "validation",
+  "experiment_label": "S1 Normal Traffic",
+  "template_status": "owner validation geometry and OD staged; pending inferred Cone head confirmation and live Town05 check",
+  "blockers": [
+    "Confirm the inferred Cone head coordinate (-5470,-3700 cm) and complete rendered Town05 geometry/SUMO validation before use."
+  ],
+  "warnings": [
+    "Stable internal identity remains s5 even though the experiment display role is Normal after the S1/S5 naming swap.",
+    "Rear bg_route_01 is fixed at five requested vehicles from edge -46 position 40 m; opposing bg_route_02 alone uses the base 8 initial / 24 max / 1.2 veh/s profile.",
+    "The supplied Cone head omitted y and is provisionally reconstructed as (-5470,-3700) cm."
+  ]
+}

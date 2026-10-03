@@ -1,0 +1,167 @@
+{
+  "source": {
+    "units": "unreal_centimeter",
+    "runtime_units": "carla_meter",
+    "received_layout_names": [
+      "test_wz1_a"
+    ],
+    "traffic_note": "CARLA-only: Ego plus scripted jaywalkers; no SUMO network, route, traffic, or pedestrian proxy.",
+    "trigger_note": "Three pedestrian crossing events are queued when Ego reaches 45 m, 30 m, and 15 m before the owner-authored board at (110.0, 30.0) m.",
+    "collision_target_note": "The collision target is retained as an owner reference; the controlled path is spawn to disappear.",
+    "rotation_note": "Owner rotation is preserved exactly. Runtime movement follows the spawn-to-disappear vector.",
+    "spawn_height_note": "The owner supplied pedestrian spawn z=0.70 m; collision, disappear and trigger-anchor reference points use z=0.50 m.",
+    "origin_gate_note": "Origins 0, 1 and 2 start 50 m, 55 m and 60 m before the trigger anchor respectively, so none begins inside the outer 45 m gate.",
+    "dataset_split": "test",
+    "template_note": "Owner-authored S4 final-test geometry, jaywalker path and three-origin OD setup; pending live Town10HD verification."
+  },
+  "layouts": {
+    "a": {
+      "workzone": {
+        "x_min": 109.0,
+        "x_max": 110.0,
+        "y_min": 14.0,
+        "y_max": 22.0,
+        "geometry_mode": "forbidden_rect",
+        "warning_signs": [
+          [
+            110.0,
+            30.0
+          ]
+        ],
+        "traffic_cones": [
+          [
+            110.0,
+            22.0
+          ],
+          [
+            109.5,
+            20.0
+          ],
+          [
+            109.0,
+            18.0
+          ],
+          [
+            109.5,
+            16.0
+          ],
+          [
+            110.0,
+            14.0
+          ]
+        ],
+        "closed_lanes": []
+      },
+      "jaywalker": {
+        "spawn": [
+          111.7,
+          12.0,
+          0.7
+        ],
+        "collision_target": [
+          106.2,
+          12.0,
+          0.5
+        ],
+        "disappear": [
+          104.5,
+          12.0,
+          0.5
+        ],
+        "trigger_anchor": [
+          110.0,
+          30.0,
+          0.5
+        ],
+        "yaw_deg": 90.0,
+        "speed_mps": 2.0,
+        "trigger_distances_m": [
+          45.0,
+          30.0,
+          15.0
+        ],
+        "disappear_radius_m": 0.5,
+        "blueprint": "walker.pedestrian.0001",
+        "verified": true
+      },
+      "origin": {
+        "mode": "absolute_spawn_points",
+        "scope": "layout_specific",
+        "selection": "uniform_random",
+        "spawn_points": [
+          {
+            "location_cm": [
+              10610.0,
+              8000.0
+            ],
+            "z_m": 0.5,
+            "rotation_deg": {
+              "pitch": 0.0,
+              "roll": 0.0,
+              "yaw": -90.0
+            }
+          },
+          {
+            "location_cm": [
+              10610.0,
+              8500.0
+            ],
+            "z_m": 0.5,
+            "rotation_deg": {
+              "pitch": 0.0,
+              "roll": 0.0,
+              "yaw": -90.0
+            }
+          },
+          {
+            "location_cm": [
+              10610.0,
+              9000.0
+            ],
+            "z_m": 0.5,
+            "rotation_deg": {
+              "pitch": 0.0,
+              "roll": 0.0,
+              "yaw": -90.0
+            }
+          }
+        ]
+      },
+      "destination": {
+        "mode": "finish_line",
+        "line_cm": [
+          [
+            11160.0,
+            -600.0
+          ],
+          [
+            10470.0,
+            -600.0
+          ]
+        ],
+        "crossing_reference": "vehicle_center",
+        "crossing_heading_deg": -90.0
+      }
+    }
+  },
+  "sumo": null,
+  "carla": {
+    "road_heading_deg": -90.0,
+    "lane_center_offset_m": 0.0,
+    "lane_half_width": 3.5,
+    "road_half_width": 5.0,
+    "host": "localhost",
+    "port": 2000,
+    "tm_port": 8000,
+    "timeout": 10.0,
+    "town": "Town10HD",
+    "fixed_delta_s": 0.1,
+    "lateral_shift": 0.0
+  },
+  "episode": {
+    "max_steps": 600,
+    "sim_dt": 0.1,
+    "sync_hz": 10.0
+  },
+  "ego_role": "hero"
+}

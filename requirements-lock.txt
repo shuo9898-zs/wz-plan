@@ -1,0 +1,11 @@
+# Verified environment for this bundle (Python 3.8.20).
+numpy==1.24.3
+gymnasium==0.29.1
+stable-baselines3==2.3.2
+torch==2.4.1
+shapely==2.0.5
+eclipse-sumo==1.27.1
+
+# CARLA 0.9.15 PythonAPI must be installed from the matching CARLA package.
+# For NVIDIA CUDA 11.8, install the matching PyTorch wheel instead of the
+# default CPU wheel where appropriate.

@@ -1,0 +1,18 @@
+{
+  "scenario_id": "s4",
+  "town": "Town10HD",
+  "status": "experimental",
+  "traffic_backend": "carla_only",
+  "geometry_profile": "forbidden_workzone_jaywalker",
+  "reward_profile": "standard_workzone",
+  "sumo_network": null,
+  "warnings": [
+    "CARLA-only: S4 must never launch SUMO or create a pedestrian proxy",
+    "Jaywalker paths and owner rotations require live Town10HD visual confirmation",
+    "WZ2 has no supplied board coordinate; its cone head is used as the trigger anchor"
+  ],
+  "work_zones": [
+    {"id": "wz1", "config": "configs/wz1.json", "route": null, "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]},
+    {"id": "wz2", "config": "configs/wz2.json", "route": null, "layouts": [{"id": "a"}, {"id": "b"}, {"id": "c"}]}
+  ]
+}

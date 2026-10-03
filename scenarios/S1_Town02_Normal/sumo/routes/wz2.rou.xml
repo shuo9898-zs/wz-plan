@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  S1_WZ2 SUMO routes file
+  =======================
+  Work zone : edge -12  (east-west road, x ≈ 10–183, y ≈ 197–199 in SUMO)
+              CARLA coords: y ≈ 105–107 m (road runs horizontally, ego travels +X)
+
+  Town02 full loop (through WZ2):
+      17 → -13 → -14 → -15 → 3 → -12 → 16 → 1 → 0 → 2 → -18 → -19 → 17
+
+  Ego approach paths (both converge on -12):
+      Path 1:  -15 → 3 → -12 → 16   (ego coming from edge -15, longest approach)
+      Path 2:         3 → -12 → 16   (ego enters from edge 3 directly)
+
+  All routes repeat the loop twice so a vehicle survives a full 120-s episode
+  (120 s × 13.89 m/s ≈ 1 667 m; one loop ≈ 700 m → 2 loops ≈ 1 400 m).
+
+  Edge IDs from Town02_edit.net.xml (Town02 left-hand network converted to SUMO).
+  Do NOT pre-spawn vehicles here; use TraCI injection (tick_poisson_spawn).
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ================================================================ -->
+    <!-- Vehicle types                                                     -->
+    <!-- ================================================================ -->
+
+    <vType id="car"
+           vClass="passenger"
+           length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5"
+           sigma="0.5" tau="1.2" minGap="2.5"/>
+
+    <vType id="truck"
+           vClass="truck"
+           length="7.5" width="2.4" height="3.0"
+           maxSpeed="11.1" accel="1.5" decel="3.5"
+           sigma="0.3" tau="1.5" minGap="3.0"/>
+
+    <vType id="passenger"
+           vClass="passenger"
+           length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5"
+           sigma="0.5" tau="1.2" minGap="2.5"/>
+
+    <!-- ================================================================ -->
+    <!-- Ego proxy placeholder route                                       -->
+    <!-- Ego approaches WZ2 via edge 3; position overridden by moveToXY.  -->
+    <!-- ================================================================ -->
+    <route id="ego_placeholder" edges="3"/>
+
+    <!-- ================================================================ -->
+    <!-- Background traffic: Path 1  (-15 → 3 → -12 → 16)                -->
+    <!-- Vehicles come from the north leg (-15) via the curve (3).        -->
+    <!-- ================================================================ -->
+
+    <!-- Full loop × 2, start from edge 17 -->
+    <route id="bg_route_01"
+           edges="17 -13 -14 -15 3 -12 16 1 0 2 -18 -19
+                  17 -13 -14 -15 3 -12 16 1 0 2 -18 -19 17"/>
+
+    <!-- Loop × 2, start from edge -15 (directly upstream of WZ2) -->
+    <route id="bg_route_02"
+           edges="-15 3 -12 16 1 0 2 -18 -19 17 -13 -14
+                  -15 3 -12 16 1 0 2 -18 -19 17 -13 -14 -15"/>
+
+    <!-- Loop × 2, start from edge -12 (on the WZ edge) -->
+    <route id="bg_route_03"
+           edges="-12 16 1 0 2 -18 -19 17 -13 -14 -15 3
+                  -12 16 1 0 2 -18 -19 17 -13 -14 -15 3 -12"/>
+
+    <!-- ================================================================ -->
+    <!-- Background traffic: Path 2  (3 → -12 → 16)                      -->
+    <!-- Vehicles enter the WZ approach from edge 3 directly.             -->
+    <!-- ================================================================ -->
+
+    <!-- Loop × 2, start from edge 3 -->
+    <route id="bg_route_04"
+           edges="3 -12 16 1 0 2 -18 -19 17 -13 -14 -15
+                  3 -12 16 1 0 2 -18 -19 17 -13 -14 -15 3"/>
+
+</routes>

@@ -1,0 +1,32 @@
+{
+  "scenario_id": "s1",
+  "town": "Town02",
+  "status": "blocked",
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "validation",
+  "experiment_label": "S5 High Traffic",
+  "template_status": "owner validation geometry, OD and SUMO routes staged; pending live Town02 check",
+  "blockers": [
+    "Render-check the four-metre-long forbidden rectangle, large board, cones, Ego spawn, directed finish crossing, and all three SUMO streams before use."
+  ],
+  "warnings": [
+    "Stable internal identity remains s1 even though the experiment display role is S5 High Traffic after the S1/S5 naming swap.",
+    "The corrected large board coordinate is y=200 m; the forbidden rectangle spans from that board to Cone Final at y=224 m.",
+    "bg_route_01 uses the base 20 initial / 40 max / 2.0 veh/s pool; bg_route_02 is fixed at three requested vehicles and bg_route_03 at five."
+  ]
+}

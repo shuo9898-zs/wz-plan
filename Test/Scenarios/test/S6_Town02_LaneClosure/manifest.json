@@ -1,0 +1,37 @@
+{
+  "scenario_id": "s6",
+  "town": "Town02",
+  "status": "ready",
+  "live_verification": {
+    "verified_at": "2026-09-01",
+    "method": "rendered audit still plus one completed episode per origin",
+    "artifacts": "Test/geometry_checks",
+    "configuration_revision": "2026-09-02: Ego approach distances aligned with validation and SUMO departPos reset to 0 m; work-zone geometry unchanged"
+  },
+  "traffic_backend": "carla_sumo",
+  "geometry_profile": "forbidden_workzone",
+  "reward_profile": "standard_workzone",
+  "sumo_network": "sumo/network.net.xml",
+  "work_zones": [
+    {
+      "id": "wz1",
+      "config": "configs/wz1.json",
+      "route": "sumo/routes/wz1.rou.xml",
+      "layouts": [
+        {
+          "id": "a"
+        }
+      ]
+    }
+  ],
+  "dataset_split": "test",
+  "template_status": "owner-authored S6 test geometry live-verified in Town02; revised Ego origins and SUMO departPos statically checked",
+  "blockers": [],
+  "warnings": [
+    "The platoon size/headway/gap fields and car speed distribution exactly preserve the current training S6 contract.",
+    "CARLA-SUMO lateral_shift is -4.0 m: the raw -12 passenger lane maps near y=105.4 m at shift 0 and near the adjacent oncoming lane y=109.4 m at shift -4.",
+    "The -12>16 platoon starts at departPos 0 m on edge -12; the shared V2 platoon scheduler honors route-specific departPos ranges.",
+    "The three Ego origins are x=46 m, 41 m and 51 m along yaw 0 degrees, giving 50 m, 55 m and 45 m to Cone Head and matching the validation approach-distance distribution.",
+    "No large warning board was supplied; the forbidden rectangle is the full envelope of the nine supplied cone coordinates."
+  ]
+}

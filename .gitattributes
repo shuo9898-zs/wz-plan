@@ -1,0 +1,3 @@
+# Preserve source and scenario bytes across platforms. Test/Scenarios/FILE_SHA256.txt
+# hashes the exact file contents, including their line endings.
+* -text

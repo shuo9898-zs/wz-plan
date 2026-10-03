@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Test S2 WZ1 counter-clockwise routes. Vehicles are injected only through TraCI. -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" vClass="passenger" length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5" sigma="0.5" tau="2.4" minGap="2.5"/>
+    <vType id="passenger" vClass="passenger" length="4.5" width="1.8" height="1.5"
+           maxSpeed="13.9" accel="2.6" decel="4.5" sigma="0.5" tau="1.2" minGap="2.5"/>
+    <!-- Owner shorthand 21>-30>-33 requires the tiny connector edges -31/-32. -->
+    <route id="ego_placeholder" edges="21 -30 -31 -32 -33"/>
+    <route id="bg_route_01" edges="21 -30 -31 -32 -33"/>
+    <!-- Owner shorthand -30>-30 means start and finish on the same edge. -->
+    <route id="bg_route_02" edges="-30"/>
+</routes>

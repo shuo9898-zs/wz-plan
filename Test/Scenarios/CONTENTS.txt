@@ -1,0 +1,20 @@
+Held-out test-scenario inputs bundled with WZ-Plan.
+
+These files are maintained in this repository and may differ from earlier
+local copies. FILE_SHA256.txt records hashes of the current test/ files.
+
+Included:
+  - Six independent test scenarios (S1-S6)
+  - One work-zone layout per scenario: configs\wz1.json
+  - Three ego origins and one destination line per scenario
+  - manifest.json and scenario.py for every scenario
+  - SUMO network.net.xml and routes\wz1.rou.xml for S1/S2/S3/S5/S6
+  - CARLA-only jaywalker_controller.py for S4 (no SUMO by design)
+  - test\check_templates.py and test\README.md
+
+Not included in this scenario package:
+  - Python caches, models, result files, and logs
+  - Training and evaluation code outside test\
+
+This package contains scenario inputs only. It is independent of the reward,
+PPO algorithm, encoder, training seed, and model checkpoint.

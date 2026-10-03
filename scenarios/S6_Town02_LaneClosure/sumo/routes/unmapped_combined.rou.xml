@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" vClass="passenger" accel="2.9" decel="5.0" sigma="0.3" length="4.5" minGap="2.0" maxSpeed="55.0" color="1,1,0"/>
+    
+    <!-- Route starting at edge 17. -->
+    <route id="route_from_17" edges="17 -13 -14 -15 3 -12 16 1 0 2 -18 -19 17"/>
+    
+    <!-- Route starting at edge -13. -->
+    <route id="route_from_-13" edges="-13 -14 -15 3 -12 16 1 0 2 -18 -19 17 -13"/>
+    
+    <!-- Route starting at edge 3. -->
+    <route id="route_from_3" edges="3 -12 16 1 0 2 -18 -19 17 -13 -14 -15 3"/>
+    
+    <!-- Route starting at edge -12. -->
+    <route id="route_from_-12" edges="-12 16 1 0 2 -18 -19 17 -13 -14 -15 3 -12"/>
+    
+    <!-- Route starting at edge 1. -->
+    <route id="route_from_1" edges="1 0 2 -18 -19 17 -13 -14 -15 3 -12 16 1"/>
+    
+    <!-- Ego route covering the full loop. -->
+    <route id="ego_route" edges="-19 17 -13 -14 -15 3 -12 16 1 0 2 -18 -19"/>
+    
+    <!-- Ego vehicle controlled by CARLA and tracked in SUMO. -->
+    <vehicle id="ego_vehicle" type="car" route="ego_route" depart="0" departLane="best" departPos="base" departSpeed="0"/>
+    
+    <!-- Five background vehicles. -->
+    <vehicle id="car_1" type="car" route="route_from_17" depart="0" departLane="best" departPos="base" departSpeed="10"/>
+    <vehicle id="car_2" type="car" route="route_from_-13" depart="2" departLane="best" departPos="base" departSpeed="10"/>
+    <vehicle id="car_3" type="car" route="route_from_3" depart="4" departLane="best" departPos="base" departSpeed="10"/>
+    <vehicle id="car_4" type="car" route="route_from_-12" depart="6" departLane="best" departPos="base" departSpeed="10"/>
+    <vehicle id="car_5" type="car" route="route_from_1" depart="8" departLane="best" departPos="base" departSpeed="10"/>
+</routes>
